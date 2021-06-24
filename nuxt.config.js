@@ -20,6 +20,15 @@ module.exports = {
   /*
   ** Build configuration
   */
+
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    '@nuxtjs/axios',
+    'bootstrap-vue/nuxt'
+  ],
+
   build: {
     /*
     ** Run ESLint on save
