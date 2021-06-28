@@ -21,13 +21,35 @@ module.exports = {
   ** Build configuration
   */
 
+  axios: {
+    baseURL:"https://pet-rescue-api-haolt.herokuapp.com/api/v1",
+  },
+
+  plugins: ['~/plugins/error.js'],
   /*
   ** Nuxt.js modules
   */
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/toast',
+    'nuxt-i18n',
     'bootstrap-vue/nuxt'
   ],
+
+  i18n: {
+    langDir: 'locales/',
+    locales: [
+      { code: 'en', file: 'en.json', iso: 'en'}
+    ],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+    }
+  },
+
+  toast: {
+    position: 'top-center',
+  },
 
   build: {
     /*
