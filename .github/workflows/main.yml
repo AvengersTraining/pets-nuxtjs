@@ -45,9 +45,12 @@ jobs:
         run: |
           if [[ true ]];  then
             curl -X POST -H "X-ChatWorkToken: ${{ secrets.CW_TOKEN }}" -d \
-              "body=[info][title] Deploy done | Build ${{ github.run_number }}| [/title]- Repo: ${{ github.repository }}
-          - Obj: ${{ github.event }}[/info]
+              "body=[info][title] Deploy Successfully | Build ID: ${{ github.run_number }}  [/title]- Repo: ${{ github.repository }}
+          - From Branch: ${{ github.head_ref }}
+          - To Branch: ${{ github.base_ref }}
+          - Pull Request: ${{ github.event.pull_request.html_url }}
+          - Merged At: ${{ github.event.pull_request.merged_at }}[/info]
               " \
-              "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM }}/messages"
+              "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM_TEST }}/messages"
           fi
   
