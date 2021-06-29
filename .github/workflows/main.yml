@@ -40,3 +40,14 @@ jobs:
           AWS_REGION: 'ap-southeast-1'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
+      - name: Deploy Notify
+        run: |
+          if [[ true ]];  then
+            curl -X POST -H "X-ChatWorkToken: ${{ secrets.CW_TOKEN }}" -d \
+              "body=[info][title] Deploy done | Build ${{ github.run_number }}| [/title]- Repo: ${{ github.repository }}
+          - Obj: ${{ github.event }}[/info]
+              " \
+              "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM }}/messages"
+          fi
+  
