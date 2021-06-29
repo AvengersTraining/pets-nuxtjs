@@ -53,4 +53,8 @@ jobs:
               " \
               "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM_TEST }}/messages"
           fi
-  
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
