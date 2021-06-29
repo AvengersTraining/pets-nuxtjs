@@ -26,6 +26,7 @@
 import AppLogo from '~/components/AppLogo.vue'
 
 export default {
+  middleware: ['check_auth', 'auth'],
   components: {
     AppLogo
   }

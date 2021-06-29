@@ -25,7 +25,6 @@ module.exports = {
     baseURL:"https://pet-rescue-api-haolt.herokuapp.com/api/v1",
   },
 
-  plugins: ['~/plugins/error.js'],
   /*
   ** Nuxt.js modules
   */
