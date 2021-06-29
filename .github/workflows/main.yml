@@ -35,6 +35,27 @@ jobs:
                 "user_commit": "Người ấy là ai ??"
               }
             }
+      
+      - name: Get User Merged
+        uses: kanga333/variable-mapper@master
+        with:
+          key: "${{github.event.head_commit.author.username}}"
+          map: |
+            {
+              "hieudt-2054": {
+                "user_merged": "[To:4206965]"
+              },
+              "sunh-2087": {
+                "user_merged": "[To:4329448]"
+              },
+              "tiennv-1572": {
+                "user_merged": "[To:3401308]"
+              },
+              ".*": {
+                "user_merged": "Người ấy là ai ??"
+              }
+            }
+      
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.2
 
@@ -69,6 +90,7 @@ jobs:
             curl -X POST -H "X-ChatWorkToken: ${{ secrets.CW_TOKEN }}" -d \
               "body=[info][title] Deploy Successfully | Build ID: ${{ github.run_number }}  [/title]- Repo: ${{ github.repository }}
           - Thanh niên căm mít: ${{ env.user_commit }}
+          - Thanh niên mợt : ${{ env.user_merged }}
           - Căm mít mét sít: ${{github.event.commits[0].message}}[/info]
               " \
               "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM_TEST }}/messages"
