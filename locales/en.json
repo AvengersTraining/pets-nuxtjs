@@ -1,0 +1,10 @@
+ {
+  "btn": {
+    "register": "Register",
+    "login": "Login"
+  },
+  "title": {
+    "register": "Register",
+    "login": "Login"
+  }
+}
