@@ -93,6 +93,6 @@ jobs:
           - Thanh niên mợt : ${{ env.user_merged }}
           - Căm mít mét sít: ${{github.event.commits[0].message}}[/info]
               " \
-              "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM_TEST }}/messages"
+              "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM }}/messages"
           fi
 
