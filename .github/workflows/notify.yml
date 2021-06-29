@@ -1,0 +1,22 @@
+name: Pull Request Submitted
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  deploys:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull Request Submitted
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          if [[ true ]];  then
+            curl -X POST -H "X-ChatWorkToken: ${{ secrets.CW_TOKEN }}" -d \
+              "body=[info][title] Pull Request Submitted [/title]- New submitted URL: ${{ github.event.review.html_url }}
+          - Reviewer: ${{ github.event.review.user.login }} ( ${{ github.event.review.user.html_url }} )
+          - Submitted at: ${{ github.event.review.submitted_at }}
+          - Type: ${{ github.event.review.state }}[/info]
+              " \
+              "https://api.chatwork.com/v2/rooms/${{ secrets.CW_ROOM }}/messages"
+          fi
