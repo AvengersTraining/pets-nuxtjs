@@ -32,6 +32,9 @@
 </template>
 
 <script>
+import Error from '../helpers/Error'
+import Error2 from '../helpers/Error2'
+
 export default {
     props: {
         errors: {
@@ -45,6 +48,10 @@ export default {
             }
         }
     },
+    mounted() {
+        this.errorHandler.get('hihi');
+        Error2.get('haha');
+    },
     data() {
         return {
             userInfo: {
@@ -56,7 +63,8 @@ export default {
             error: {
                 key: '',
                 message: '',
-            }
+            },
+            errorHandler: new Error,
         }
     },
     methods: {
