@@ -29,7 +29,7 @@ const moduleAuth =  {
         token = tokenKey.split('=')[1];
       } else {
         // Set token by local storage
-        token = localStorage.getItem('token');
+        token = process.browser && localStorage.getItem('token');
       }
 
       if (!token) {
