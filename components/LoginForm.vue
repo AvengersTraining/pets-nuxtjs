@@ -6,12 +6,10 @@
                 <b-form-input id="input-1" :class="{ 'is-invalid' : error.get('username') }" v-model="userInfo.username"></b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.username : ''">{{ errors.username[0] }}</b-form-invalid-feedback>
-            <br>
             <b-form-group id="input-group-2" label="Password" label-for="input-2">
                 <b-form-input id="input-2" v-model="userInfo.password" :class="{ 'is-invalid' : error.get('password') }" type="password"></b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.password : ''">{{ errors.password[0] }}</b-form-invalid-feedback>
-            <br>
             <b-button type="submit" variant="outline-primary" class="w-100 mb-3">{{ $t('btn.login') }}</b-button>
             <p>{{ $t('pages.login.have_not_account') }}
                 <NuxtLink to="/register">{{ $t('btn.register') }}</NuxtLink>

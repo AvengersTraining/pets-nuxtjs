@@ -7,22 +7,18 @@
                 </b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.email : ''">{{ errors.email[0] }}</b-form-invalid-feedback>
-            <br>
             <b-form-group id="input-group-2" label="User Name" label-for="input-2">
                 <b-form-input id="input-2" :class="{'is-invalid' : error.get('username') }" v-model="userInfo.username">
                 </b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.username : ''">{{ errors.username[0] }}</b-form-invalid-feedback>
-            <br>
             <b-form-group id="input-group-2" label="Password" label-for="input-2">
                 <b-form-input id="input-2" type="password" :class="{'is-invalid' : error.get('password') }" v-model="userInfo.password"></b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.password : ''">{{ errors.password[0] }}</b-form-invalid-feedback>
-            <br>
             <b-form-group id="input-group-2" label="Password Confirm" label-for="input-2">
                 <b-form-input id="input-2" type="password" v-model="userInfo.password_confirmation"></b-form-input>
             </b-form-group>
-            <br>
             <b-button type="submit" variant="outline-primary" class="w-100 mb-3">{{ $t('btn.register') }}</b-button>
             <p>{{ $t('pages.register.have_account') }}
                 <NuxtLink to="/login">{{ $t('btn.login') }}</NuxtLink>
