@@ -6,14 +6,14 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/pet">{{ $t('pet') }}</b-nav-item>
+          <b-nav-item to="/pets">{{ $t('pet') }}</b-nav-item>
           <b-nav-item to="/post">{{ $t('post') }}</b-nav-item>
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right>
             <template #button-content>
-              <b-avatar></b-avatar>
+              <b-avatar :src="profile.avatar" v-if="profile"></b-avatar>
               <em v-if="profile">{{ profile.username }}</em>
             </template>
             <b-dropdown-item to="/profile">{{ $t('profile') }}</b-dropdown-item>
