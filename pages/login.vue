@@ -8,8 +8,10 @@
 import LoginForm from '~/components/LoginForm.vue';
 import Error from '~/helpers/Error.js';
 import Cookies from 'js-cookie';
+import { statusCode } from '~/constant/index.js'
 
 export default {
+    middleware: ['check_auth', 'check_logged'],
     components: {
         LoginForm
     },
@@ -33,13 +35,18 @@ export default {
                     // Set token in local and cookie
                     localStorage.setItem('token', response.access_token);
                     Cookies.set('token', response.access_token);
+                    this.$toasted.success(this.$t('message.welcome'));
 
                     return this.$router.push('/');
                 })
                 .catch(error => {
-                    if (error.response.status === 422) {
+                    if (error.response.status === statusCode.VALIDATION) {
                         Error.record(error.response.data.errors);
                         this.errors = error.response.data.errors;
+                    }
+
+                    if (error.response.status === statusCode.UNAUTHORIZED) {
+                        this.$toast.error(this.$t('message.wrong_account_or_password'));
                     }
                 });
         }

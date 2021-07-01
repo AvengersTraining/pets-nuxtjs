@@ -5,8 +5,10 @@
 <script>
 import RegisterForm from '~/components/RegisterForm.vue';
 import Error from '~/helpers/Error.js';
+import { statusCode } from '~/constant/index.js';
 
 export default {
+    middleware: ['check_auth', 'check_logged'],
     data() {
         return {
             errors: null
@@ -23,10 +25,12 @@ export default {
                 userRegister
             ).then((response) => {
                 if (response.record) {
+                    this.$toasted.success(this.$t('message.register_success'));
+
                     this.$router.push('/login');
                 }
             }).catch((error) => {
-                if (error.response.status === 422) {
+                if (error.response.status === statusCode.VALIDATION) {
                     Error.record(error.response.data.errors);
                     this.errors = error.response.data.errors;
                 }

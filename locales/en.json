@@ -7,6 +7,11 @@
     "register": "Register",
     "login": "Login"
   },
+  "message": {
+    "welcome": "Welcome to App !!!",
+    "wrong_account_or_password": "Wrong account or password !!!",
+    "register_success": "Sign Up Success"
+  },
   "pages": {
     "register": {
       "have_account": "Do you have an account?"

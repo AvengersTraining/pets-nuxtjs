@@ -48,6 +48,8 @@ module.exports = {
 
   toast: {
     position: 'top-center',
+    theme: 'bubble',
+    duration: 5000,
   },
 
   build: {
