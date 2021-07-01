@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand to="/app">{{ $t('project.name') }}</b-navbar-brand>
+      <b-navbar-brand to="/">{{ $t('project.name') }}</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
@@ -14,9 +14,9 @@
           <b-nav-item-dropdown right>
             <template #button-content>
               <b-avatar></b-avatar>
-              <em>User</em>
+              <em v-if="profile">{{ profile.username }}</em>
             </template>
-            <b-dropdown-item href="#">{{ $t('profile') }}</b-dropdown-item>
+            <b-dropdown-item to="/profile">{{ $t('profile') }}</b-dropdown-item>
             <b-dropdown-item href="#">{{ $t('logout') }}</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -24,3 +24,15 @@
     </b-navbar>
   </div>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+
+export default {
+  computed: {
+    ...mapGetters([
+      'profile',
+    ])
+  }
+}
+</script>
