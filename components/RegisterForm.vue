@@ -3,19 +3,19 @@
     <b-card class="mb-2 form-register" title="Register">
         <b-form @submit.prevent="onRegister">
             <b-form-group id="input-group-1" label="Email address" label-for="input-1">
-                <b-form-input id="input-1" :class="{'is-invalid' : showError('email')}" v-model="userInfo.email">
+                <b-form-input id="input-1" :class="{ 'is-invalid' : error.get('email') }" v-model="userInfo.email">
                 </b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.email : ''">{{ errors.email[0] }}</b-form-invalid-feedback>
             <br>
             <b-form-group id="input-group-2" label="User Name" label-for="input-2">
-                <b-form-input id="input-2" :class="{'is-invalid' : showError('username')}" v-model="userInfo.username">
+                <b-form-input id="input-2" :class="{'is-invalid' : error.get('username') }" v-model="userInfo.username">
                 </b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.username : ''">{{ errors.username[0] }}</b-form-invalid-feedback>
             <br>
             <b-form-group id="input-group-2" label="Password" label-for="input-2">
-                <b-form-input id="input-2" type="password" :class="{'is-invalid' : showError('password')}" v-model="userInfo.password"></b-form-input>
+                <b-form-input id="input-2" type="password" :class="{'is-invalid' : error.get('password') }" v-model="userInfo.password"></b-form-input>
             </b-form-group>
             <b-form-invalid-feedback :state="validation" v-if="errors ? errors.password : ''">{{ errors.password[0] }}</b-form-invalid-feedback>
             <br>
@@ -24,7 +24,8 @@
             </b-form-group>
             <br>
             <b-button type="submit" variant="outline-primary" class="w-100 mb-3">{{ $t('btn.register') }}</b-button>
-            <p>Do you have an account? <NuxtLink to="/login">{{ $t('btn.login') }}</NuxtLink>
+            <p>{{ $t('pages.register.have_account') }}
+                <NuxtLink to="/login">{{ $t('btn.login') }}</NuxtLink>
             </p>
         </b-form>
     </b-card>
@@ -32,6 +33,8 @@
 </template>
 
 <script>
+import Error from '~/helpers/Error.js';
+
 export default {
     props: {
         errors: {
@@ -53,19 +56,13 @@ export default {
                 password: '',
                 password_confirmation: '',
             },
-            error: {
-                key: '',
-                message: '',
-            }
+            error: Error,
         }
     },
     methods: {
         onRegister() {
             this.$emit('onRegister', this.userInfo);
         },
-        showError(filed) {
-            return this.$showError(this.errors ,filed);
-        }
     }
 }
 </script>

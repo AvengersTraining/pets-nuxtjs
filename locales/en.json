@@ -6,5 +6,13 @@
   "title": {
     "register": "Register",
     "login": "Login"
+  },
+  "pages": {
+    "register": {
+      "have_account": "Do you have an account?"
+    },
+    "login": {
+      "have_not_account": "Don’t have an account?"
+    }
   }
 }
