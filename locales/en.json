@@ -1,4 +1,14 @@
  {
+  "home": "Home",
+  "pet": "Pet",
+  "post": "Post",
+  "login": "Login",
+  "register": "Register",
+  "logout": "Log Out",
+  "profile": "Profile",
+  "project": {
+    "name": "Pet Project"
+  },
   "btn": {
     "register": "Register",
     "login": "Login"
