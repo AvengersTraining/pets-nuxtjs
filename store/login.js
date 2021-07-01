@@ -1,4 +1,4 @@
-const moduleAuth =  {
+const moduleAuth = {
   state: () => ({
     token: null,
   }),

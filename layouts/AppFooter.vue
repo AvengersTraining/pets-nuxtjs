@@ -1,5 +1,13 @@
 <template>
-    <footer class="text-center text-muted bg-light pt-2">
+<footer class="text-center text-muted bg-light pt-3">
     <p>{{ $t('project.name') }}</p>
-  </footer>
+</footer>
 </template>
+
+<style>
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+</style>
