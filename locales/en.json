@@ -28,6 +28,11 @@
     },
     "login": {
       "have_not_account": "Don’t have an account?"
+    },
+    "profile": {
+      "username": "User name",
+      "email": "Email",
+      "created_at": "Created at"
     }
   }
 }
