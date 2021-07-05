@@ -13,16 +13,5 @@ export default {
     components: {
         Profile
     },
-    fetch(context) {
-        context.$axios.setToken(context.store.getters.isAuthenticated, 'Bearer');
-
-        return context.$axios.$get('/profile')
-            .then(response => {
-                context.store.dispatch('setProfile', response);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    },
 }
 </script>
