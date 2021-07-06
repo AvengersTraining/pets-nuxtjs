@@ -15,7 +15,9 @@
   },
   "title": {
     "register": "Register",
-    "login": "Login"
+    "login": "Login",
+    "pet_update": "Update pet data",
+    "pet_upload": "Upload your pet"
   },
   "message": {
     "welcome": "Welcome to App !!!",
@@ -33,6 +35,29 @@
       "username": "User name",
       "email": "Email",
       "created_at": "Created at"
+    },
+    "pets": {
+      "name": "Name",
+      "age": "Age",
+      "gender": "Gender",
+      "avatar": "Avatar",
+      "breed": "Breed",
+      "type": "Type",
+      "delivery_type": "Delivery Type",
+      "status": "Status",
+      "color": "Color",
+      "description": "Description",
+      "invalid_feedback": "This field is required",
+      "avatar_placeholder": "Link to avatar"
     }
+  },
+  "alerts": {
+    "success": "Updated successfully",
+    "failed": "Update failed",
+    "pet_failed": "Cannot fetch pet data"
+  },
+  "common": {
+    "create": "Create",
+    "edit": "Edit"
   }
 }

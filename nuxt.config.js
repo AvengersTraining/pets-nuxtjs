@@ -49,7 +49,7 @@ module.exports = {
   },
 
   toast: {
-    position: 'top-center',
+    position: 'top-right',
     theme: 'bubble',
     duration: 5000,
   },
