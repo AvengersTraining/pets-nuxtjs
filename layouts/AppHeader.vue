@@ -17,7 +17,7 @@
               <em v-if="profile">{{ profile.username }}</em>
             </template>
             <b-dropdown-item to="/profile">{{ $t('profile') }}</b-dropdown-item>
-            <b-dropdown-item href="#">{{ $t('logout') }}</b-dropdown-item>
+            <b-dropdown-item @click="onLogout">{{ $t('logout') }}</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -33,6 +33,12 @@ export default {
     ...mapGetters([
       'profile',
     ])
+  },
+  methods: {
+    onLogout() {
+      this.$store.dispatch('logout');
+      this.$router.push('/login');
+    }
   }
 }
 </script>

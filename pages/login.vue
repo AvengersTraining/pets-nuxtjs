@@ -32,8 +32,7 @@ export default {
                     // Set token in vuex
                     this.$store.commit('setToken', response.access_token);
 
-                    // Set token in local and cookie
-                    localStorage.setItem('token', response.access_token);
+                    // Set token in cookie
                     Cookies.set('token', response.access_token);
                     this.$toasted.success(this.$t('message.welcome'));
 

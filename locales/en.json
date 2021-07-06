@@ -22,7 +22,8 @@
   "message": {
     "welcome": "Welcome to App !!!",
     "wrong_account_or_password": "Wrong account or password !!!",
-    "register_success": "Sign Up Success"
+    "register_success": "Sign Up Success",
+    "register_failed": "Account name or email already exists ^^!"
   },
   "pages": {
     "register": {
