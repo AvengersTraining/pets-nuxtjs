@@ -37,6 +37,10 @@ module.exports = {
     'bootstrap-vue/nuxt'
   ],
 
+  bootstrapVue: {
+    icons: true,
+  },
+
   i18n: {
     langDir: 'locales/',
     locales: [
