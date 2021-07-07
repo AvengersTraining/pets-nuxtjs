@@ -1,5 +1,5 @@
 import Vuex from 'vuex';
-import moduleAuth from './login';
+import moduleAuth from './auth';
 import moduleProfile from './profile';
 
 

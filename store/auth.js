@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 const moduleAuth = {
   state: () => ({
     token: null,
@@ -10,12 +12,7 @@ const moduleAuth = {
   actions: {
     initAuth(vuexContext, request) {
       let token;
-
-      if (request) {
-        if (!request.headers.cookie) {
-          return false;
-        }
-
+      if (request && request.headers.cookie) {
         // Get token cookie
         const tokenKey = request.headers.cookie.split(';').find(cookie => {
           return cookie.trim().startsWith('token=');
@@ -24,19 +21,16 @@ const moduleAuth = {
         if (!tokenKey) {
           return false;
         }
-
-        // Set token by cookie
         token = tokenKey.split('=')[1];
       } else {
-        // Set token by local storage
-        token = process.browser && localStorage.getItem('token');
-      }
-
-      if (!token) {
-        return false;
+        token = Cookies.get('token');
       }
 
       vuexContext.commit('setToken', token);
+    },
+    logout(vuexContext) {
+      vuexContext.commit('setToken', null);
+      Cookies.remove('token');
     }
   },
   getters: {

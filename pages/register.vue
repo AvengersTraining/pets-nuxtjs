@@ -16,6 +16,7 @@ export default {
     },
     components: {
         RegisterForm
+
     },
     methods: {
         onRegister(userRegister) {
@@ -33,6 +34,10 @@ export default {
                 if (error.response.status === statusCode.VALIDATION) {
                     Error.record(error.response.data.errors);
                     this.errors = error.response.data.errors;
+                }
+
+                if (error.response.status >= statusCode.SERVER_ERROR) {
+                    this.$toasted.error(this.$t('message.register_failed'));
                 }
             })
         }
