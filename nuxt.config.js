@@ -20,13 +20,11 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /*
-  ** Build configuration
+  ** Nuxt.js plugins
   */
-
-  axios: {
-    baseURL:"https://pet-rescue-api-haolt.herokuapp.com/api/v1",
-  },
-
+  plugins: [
+    '~/plugins/axios.js'
+  ],
   /*
   ** Nuxt.js modules
   */
