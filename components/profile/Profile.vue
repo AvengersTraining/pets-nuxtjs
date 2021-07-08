@@ -3,7 +3,7 @@
     <b-card :title="$t('profile')" img-top tag="article" style="max-width: 600px; width: 400px;" class="mb-2" v-if="profile">
         <div class="profile-info">
             <div>
-                <b-avatar variant="info" class="mr-4" size="4rem" />
+                <b-avatar :src="profile.avatar"  variant="info" class="mr-4" size="4rem" />
             </div>
             <div class="info">
                 <div>
@@ -20,6 +20,11 @@
                 </div>
             </div>
         </div>
+        <br>
+        <div>
+            <b-button @click="$bvModal.show('modal-update-profile')" variant="outline-primary" class="w-100 mb-3">{{ $t('btn.update_profile') }}</b-button>
+            <profile-modal />
+        </div>
     </b-card>
 </div>
 </template>
@@ -30,8 +35,12 @@ import {
 } from 'vuex';
 
 import formatDate from '~/helpers/Date';
+import ProfileModal from './ProfileModal.vue';
 
 export default {
+    components: {
+        ProfileModal
+    },
     data() {
         return {
             formatDate: formatDate,

@@ -11,19 +11,24 @@
   },
   "btn": {
     "register": "Register",
-    "login": "Login"
+    "login": "Login",
+    "update_profile": "Update Profile",
+    "update": "Update"
   },
   "title": {
     "register": "Register",
     "login": "Login",
     "pet_update": "Update pet data",
-    "pet_upload": "Upload your pet"
+    "pet_upload": "Upload your pet",
+    "update_profile": "Update Profile"
   },
   "message": {
     "welcome": "Welcome to App !!!",
     "wrong_account_or_password": "Wrong account or password !!!",
     "register_success": "Sign Up Success",
-    "register_failed": "Account name or email already exists ^^!"
+    "register_failed": "Account name or email already exists ^^!",
+    "update_success": "Updated successfully",
+    "update_failed": "Update failed"
   },
   "pages": {
     "register": {
@@ -35,7 +40,10 @@
     "profile": {
       "username": "User name",
       "email": "Email",
-      "created_at": "Created at"
+      "created_at": "Created at",
+      "avatar": "Avatar",
+      "password": "Password",
+      "description_password": "If you want to change your password, enter it in the input box, otherwise leave it blank"
     },
     "pets": {
       "name": "Name",
@@ -59,6 +67,10 @@
   },
   "common": {
     "create": "Create",
-    "edit": "Edit"
+    "edit": "Edit",
+    "avatar": "Avatar",
+    "created_at": "Created at",
+    "password": "Password",
+    "username_required": "User name is required"
   }
 }

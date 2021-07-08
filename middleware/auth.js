@@ -4,11 +4,11 @@ export default function(context) {
     return context.redirect('/login');
   }
 
+  context.$axios.setToken(context.store.getters.isAuthenticated, 'Bearer');
+
   if (context.store.getters.profile) {
     return;
   }
-
-  context.$axios.setToken(context.store.getters.isAuthenticated, 'Bearer');
 
   context.$axios.$get('/profile')
       .then(response => {

@@ -34,7 +34,9 @@ export default {
 
                     // Set token in cookie
                     Cookies.set('token', response.access_token);
-                    this.$toasted.success(this.$t('message.welcome'));
+                    this.$toasted.success(this.$t('message.welcome'), {
+                        position: 'top-center',
+                    });
 
                     return this.$router.push('/');
                 })
@@ -45,7 +47,9 @@ export default {
                     }
 
                     if (error.response.status === statusCode.UNAUTHORIZED) {
-                        this.$toast.error(this.$t('message.wrong_account_or_password'));
+                        this.$toast.error(this.$t('message.wrong_account_or_password'), {
+                           position: 'top-center',
+                        });
                     }
                 });
         }
