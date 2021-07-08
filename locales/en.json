@@ -57,7 +57,11 @@
       "color": "Color",
       "description": "Description",
       "invalid_feedback": "This field is required",
-      "avatar_placeholder": "Link to avatar"
+      "avatar_placeholder": "Link to avatar",
+      "confirm_text": "Are you sure you want to delete this pet?",
+      "confirm_title": "Please confirm",
+      "confirm_yes": "Yes, delete now",
+      "confirm_no": "Go back"
     }
   },
   "alerts": {
@@ -71,6 +75,7 @@
     "avatar": "Avatar",
     "created_at": "Created at",
     "password": "Password",
-    "username_required": "User name is required"
+    "username_required": "User name is required",
+    "delete": "Delete"
   }
 }

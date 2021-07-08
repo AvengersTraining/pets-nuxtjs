@@ -159,8 +159,6 @@
                         ></b-form-input>
                     </b-form-group>
                 </div>
-                
-                
             </b-form>
         </b-overlay>
     </b-modal>
@@ -208,7 +206,6 @@ export default {
     methods: {
         initModal() {
             this.resetModal();
-            this.$axios.setToken(this.token, 'Bearer');
         },
         async getPetData() {
             let response;
@@ -280,6 +277,7 @@ export default {
             // Hide the modal
             this.$nextTick(() => {
                 this.$bvModal.hide(this.id);
+                this.$emit('onSuccess');
             });
         },
     },
