@@ -46,7 +46,7 @@ export default {
     },
     computed: {
         ...mapState({
-            token: state => state.moduleAuth.token, 
+            token: state => state.moduleAuth.token,
         }),
     },
     async fetch() {
@@ -108,7 +108,7 @@ export default {
             this.pets = petData.pets;
         },
     },
-    
+
 }
 </script>
 
