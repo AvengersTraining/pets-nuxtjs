@@ -37,6 +37,11 @@
     "login": {
       "have_not_account": "Don’t have an account?"
     },
+    "home": {
+      "price": "Price",
+      "posts": "posts",
+      "total_post": "Total Post"
+    },
     "profile": {
       "username": "User name",
       "email": "Email",
@@ -67,7 +72,8 @@
   "alerts": {
     "success": "Updated successfully",
     "failed": "Update failed",
-    "pet_failed": "Cannot fetch pet data"
+    "pet_failed": "Cannot fetch pet data",
+    "post_failed": "Cannot fetch post data"
   },
   "common": {
     "create": "Create",
