@@ -13,7 +13,11 @@
     "register": "Register",
     "login": "Login",
     "update_profile": "Update Profile",
-    "update": "Update"
+    "update": "Update",
+    "create": "Create",
+    "detail": "Detail",
+    "delete": "Delete",
+    "cancel": "Cancel"
   },
   "title": {
     "register": "Register",
@@ -66,7 +70,18 @@
       "confirm_text": "Are you sure you want to delete this pet?",
       "confirm_title": "Please confirm",
       "confirm_yes": "Yes, delete now",
-      "confirm_no": "Go back"
+      "confirm_no": "Go back",
+      "age_type": "Age type"
+    },
+    "posts": {
+      "list_post": "List Post",
+      "post_detail": "Post detail",
+      "create_post": "Create Post",
+      "price": "Price",
+      "name": "Name",
+      "gender": "Gender",
+      "age": "Age",
+      "confirm_delete": "Are you sure?"
     }
   },
   "alerts": {
